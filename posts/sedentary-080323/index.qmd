@@ -1,0 +1,9 @@
+---
+title: "Sedentary"
+author: "Nick Cotter"
+date: "2023-03-08"
+categories: [exercise, analysis]
+#image: "image.jpg"
+---
+
+Hello

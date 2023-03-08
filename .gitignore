@@ -38,4 +38,7 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
+# Health Data
+export.zip
+
 /.quarto/
