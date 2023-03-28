@@ -1,6 +1,0 @@
----
-title: "Test Post"
-author: "Harlow Malloc"
-date: "2023-03-08"
-categories: [news, code, analysis]
----

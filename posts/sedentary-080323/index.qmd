@@ -4,7 +4,6 @@ subtitle: "I'm slowing down"
 author: "Nick Cotter"
 date: "2023-03-08"
 categories: [exercise, analysis, exploration]
-#image: "image.jpg"
 ---
 
 How much am I slowing down over time? And how much did the pandemic affect me? Let's take a look with an Apple Health export.
