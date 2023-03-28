@@ -40,5 +40,7 @@ vignettes/*.pdf
 
 # Health Data
 export.zip
+apple_health_export
 
 /.quarto/
+.DS_Store

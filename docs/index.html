@@ -70,9 +70,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -153,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(3)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(2)</span></div><div class="category" data-category="exercise">exercise <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(3)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(3)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(2)</span></div><div class="category" data-category="exercise">exercise <span class="quarto-category-count">(1)</span></div><div class="category" data-category="exploration">exploration <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(3)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -252,7 +252,7 @@ Harlow Malloc
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="exercise,analysis" data-listing-date-sort="1678233600000" data-listing-file-modified-sort="1678281714608" data-listing-reading-time-sort="0.005">
+<div class="quarto-post image-right" data-index="2" data-categories="exercise,analysis,exploration" data-listing-date-sort="1678233600000" data-listing-file-modified-sort="1680023949318" data-listing-reading-time-sort="0.77">
 <div class="thumbnail">
 <a href="./posts/sedentary-080323/index.html">
 <div class="thumbnail-image">
@@ -266,7 +266,7 @@ Harlow Malloc
 Sedentary
 </h3>
 <div class="listing-subtitle">
-
+I’m slowing down
 </div>
 </a>
 <div class="listing-categories">
@@ -276,10 +276,13 @@ exercise
 <div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
 analysis
 </div>
+<div class="listing-category" onclick="window.quartoListingCategory('exploration'); return false;">
+exploration
+</div>
 </div>
 <a href="./posts/sedentary-080323/index.html">
 <div class="listing-description">
-Hello
+How much am I slowing down over time? And how much did the pandemic affect me? Let’s take a look with an Apple Health export.
 </div>
 </a>
 </div>

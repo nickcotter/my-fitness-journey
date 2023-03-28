@@ -1,9 +1,67 @@
 ---
 title: "Sedentary"
+subtitle: "I'm slowing down"
 author: "Nick Cotter"
 date: "2023-03-08"
-categories: [exercise, analysis]
+categories: [exercise, analysis, exploration]
 #image: "image.jpg"
 ---
 
-Hello
+How much am I slowing down over time? And how much did the pandemic affect me? Let's take a look with an Apple Health export.
+
+```{r libraries, warning=FALSE, echo=FALSE}
+library(XML)
+library(dplyr)
+library(ggplot2)
+library(tidyverse)
+```
+
+Unzip the export from Apple Health:
+
+```{r cache=TRUE}
+unzip('data/export-080323.zip')
+```
+
+Turn the export into a data frame:
+
+```{r cache=TRUE}
+health_xml <- xmlParse("apple_health_export/export.xml")
+activity_df <- XML:::xmlAttrsToDataFrame(health_xml["//ActivitySummary"], stringsAsFactors = FALSE) %>%
+as_tibble()
+```
+
+The column I'm interested in here is activeEnergyBurned - here is a plot:
+
+```{r plot1, warning=FALSE}
+plot(as.Date(activity_df$dateComponents), activity_df$activeEnergyBurned)
+```
+
+That looks a bit strange - what's with the date range?
+
+```{r}
+range(activity_df$dateComponents)
+```
+
+So a pre-epoch entry exists, which is clearly bogus. I can remove it - I'm primarily interested in the pre-pandemic period and follows:
+
+```{r filtering, warning=FALSE}
+activity <- activity_df %>%
+  mutate(date = as.Date(dateComponents)) %>%
+  mutate(calories = as.numeric(activeEnergyBurned)) %>%
+  filter(date > "2010-1-1")
+```
+
+Let's plot it again:
+
+```{r}
+plot(activity$date, activity$calories)
+```
+
+Here is the trend line:
+
+```{r trendline, warning=FALSE}
+activity %>%
+  ggplot(aes(x = date, y = calories)) + geom_line() + geom_smooth(formula = y ~ x, method = "loess") 
+```
+
+So, it's all been downhill since the end of 2019.
